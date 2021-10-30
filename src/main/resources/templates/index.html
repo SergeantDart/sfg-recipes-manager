@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Index Page</title>
+    <title>Index page</title>
 </head>
 <body>
-    <h1>My favourite recipes</h1>
+    <h2>Hello, World! These are my recipes.</h2>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+        </tr>
+        <tr th:each="recipe : ${recipes}">
+            <td th:text="${recipe.id}">123</td>
+            <td th:text="${recipe.title}">Tasty Goodness</td>
+        </tr>
+    </table>
 </body>
 </html>

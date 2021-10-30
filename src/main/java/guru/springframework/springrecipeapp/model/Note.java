@@ -1,4 +1,4 @@
-package guru.springframework.springrecipeapp.models;
+package guru.springframework.springrecipeapp.model;
 
 import javax.persistence.*;
 
