@@ -30,6 +30,12 @@ public class RecipeController {
         return "recipe/add";
     }
 
+    @RequestMapping("/recipe/delete/{id}")
+    public String deleteRecipe(@PathVariable String id) {
+        recipeService.deleteById(Long.valueOf(id));
+        return "redirect:/";
+    }
+
     @RequestMapping("/recipe/new")
     public String newRecipe(Model model) {
         model.addAttribute("recipe", new RecipeCommand());
