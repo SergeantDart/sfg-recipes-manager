@@ -54,6 +54,16 @@
                                             </label>
                                         </div>
                                     </div>
+                                    <div class="col-md-6">
+                                        <div class="row" style="margin-bottom: 20px">
+                                            <a class="btn btn-default" href="#" th:href="@{'/recipe/' + ${recipe.id} + '/image'}" role="button">Change image</a>
+                                        </div>
+
+                                        <div class="row">
+                                            <img src="../../static/images/guacamole.png" th:src="@{'/recipe/' + ${recipe.id} + '/image/show'}" width="200" height="200"/>
+                                        </div>
+
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3 form-group">
@@ -67,10 +77,11 @@
                                     </div>
                                     <div class="col-md-3 form-group">
                                         <label>Difficulty: </label>
-                                        <select>
-                                            <option>Easy</option>
-                                            <option>Medium</option>
-                                            <option>Hard</option>
+                                        <select class="form-control" th:field="*{difficulty}">
+                                            <option th:each="difficulty : ${T(guru.springframework.springrecipeapp.model.Difficulty).values()}"
+                                                    th:value="${difficulty.name()}"
+                                                    th:text="${difficulty.name()}">
+                                            </option>
                                         </select>
                                     </div>
                                 </div>
